@@ -22,35 +22,32 @@
 
         computerPlay()
         console.log(play)
-        let input = prompt('Pick Rock, Paper, or Scissors: ')
+
+        function RPS(input, play) {
+
         input = input.toLowerCase()
         let rest = input.slice(1)
         let upper = input.charAt(0)
         upper = upper.toUpperCase()
-        input = upper + rest
-        console.log(input)
+        input = upper + rest    
 
-
-        function RPS(input, play) {
-
-          if (input === 'Rock' && play === 'Scissors' || 
-               input === 'Paper' && play === 'Rock' ||
-               input === 'Scissors' && play === 'Paper') {
+        if (input === 'Rock' && play === 'Scissors' || 
+            input === 'Paper' && play === 'Rock' ||
+            input === 'Scissors' && play === 'Paper') {
                return 'You win! ' + input + ' beats ' + play
 
-            }   else if (input === 'Rock' && play === 'Paper' || 
-                input === 'Paper' && play === 'Scissors' ||
-                input === 'Scissors' && play === 'Rock') {
-                return 'You lose! ' + play + ' beats ' + input
-                }
-
-                else {
-                    return 'Tie, try again.'
-                }
+        }   else if (input === 'Rock' && play === 'Paper' || 
+            input === 'Paper' && play === 'Scissors' ||
+            input === 'Scissors' && play === 'Rock') {
+            return 'You lose! ' + play + ' beats ' + input
         }
-        console.log(RPS(input, play))
 
-function game()
+            else {
+                return 'Tie, try again.'
+        }
+        }
+
+        console.log(RPS('sciSSORs', play))
 
     </script>
 </body>
