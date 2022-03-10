@@ -1,1 +1,1 @@
-# refactored-disco
+# My first attempt at JavaScript
