@@ -38,7 +38,7 @@ if (input === 'Rock' && play === 'Scissors' ||
 function game() {
 let playerWins = 0
 let compWins = 0
-    for (let i = 0;  i < 5; i++) {
+//    for (let i = 0;  i < 5; i++) {
         play = computerPlay()
         let input = prompt('Enter Rock, Paper, or Scissors: ')
         let result = RPS(input, play)
@@ -52,17 +52,17 @@ let compWins = 0
         }
 }
 
-let text = ''
-    if (playerWins < compWins) {
-        text = 'You lose'
-        console.log(text)
-        } else if (playerWins > compWins) {
-        text = 'Hell yeah, brother! You win!'
-        console.log(text)
-        } else {
-        text = 'You tied...'
-        console.log(text)
-    }
-}
+//let text = ''
+//    if (playerWins < compWins) {
+//        text = 'You lose'
+//        console.log(text)
+//        } else if (playerWins > compWins) {
+//        text = 'Hell yeah, brother! You win!'
+//        console.log(text)
+//        } else {
+//        text = 'You tied...'
+//        console.log(text)
+//    }
+//}
 
 game()

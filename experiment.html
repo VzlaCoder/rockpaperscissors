@@ -11,9 +11,9 @@
 
         function computerPlay() {
             num = Math.random();
-            if (num <= .33) {
+            if (num <= .333) {
                 play = 'Rock';
-               } else if (num <= .66) {
+               } else if (num <= .666) {
                    play = 'Paper';
                } else {
                    play = 'Scissors';
@@ -62,6 +62,7 @@
                         console.log('Computer wins: ' + compWins) 
                 }
         }
+
         let text = ''
             if (playerWins < compWins) {
                 text = 'You lose'
