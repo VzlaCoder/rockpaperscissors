@@ -23,3 +23,7 @@ paper.addEventListener('click', function (e) {
 scissors.addEventListener('click', function (e) {
     console.log(RPS('scissors', computerPlay()))
 });
+
+const resultDiv = document.createElement('div')
+resultDiv.textContent = console.log(playerWins + ' - ' + compWins)
+document.body.appendChild(resultDiv)
