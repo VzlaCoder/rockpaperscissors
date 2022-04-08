@@ -13,13 +13,13 @@ btnContainer.appendChild(paper)
 btnContainer.appendChild(scissors)
 
 rock.addEventListener('click', function (e) {
-    console.log(e)
+    console.log(RPS('rock', computerPlay()))
 });
 
 paper.addEventListener('click', function (e) {
-    console.log(e)
+    console.log(RPS('paper', computerPlay()))
 });
 
 scissors.addEventListener('click', function (e) {
-    console.log(e)
+    console.log(RPS('scissors', computerPlay()))
 });
