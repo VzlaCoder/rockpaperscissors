@@ -13,17 +13,18 @@ btnContainer.appendChild(paper)
 btnContainer.appendChild(scissors)
 
 rock.addEventListener('click', function (e) {
-    console.log(RPS('rock', computerPlay()))
+    result = RPS('rock', computerPlay())
+    console.log(result)
 });
 
 paper.addEventListener('click', function (e) {
-    console.log(RPS('paper', computerPlay()))
+    result = RPS('paper', computerPlay())
 });
 
 scissors.addEventListener('click', function (e) {
-    console.log(RPS('scissors', computerPlay()))
+    result = RPS('scissors', computerPlay())
 });
 
 const resultDiv = document.createElement('div')
-resultDiv.textContent = console.log(playerWins + ' - ' + compWins)
+resultDiv.textContent = 'Test'
 document.body.appendChild(resultDiv)

@@ -1,8 +1,9 @@
 function computerPlay() {
-    num = Math.random();
-    if (num <= .33) {
+    num = Math.floor(Math.random()*3);
+    console.log(num)
+    if (num < 1) {
         play = 'Rock';
-       } else if (num <= .66) {
+       } else if (num < 2) {
            play = 'Paper';
        } else {
            play = 'Scissors';
@@ -11,16 +12,18 @@ function computerPlay() {
 
 function RPS(input, play) {
 
-input = input.toLowerCase()
-let rest = input.slice(1)
-let upper = input.charAt(0)
-upper = upper.toUpperCase()
-input = upper + rest    
+// input = input.toLowerCase()
+// let rest = input.slice(1)
+// let upper = input.charAt(0)
+// upper = upper.toUpperCase()
+// input = upper + rest    
+
+input = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
 
 if (input === 'Rock' && play === 'Scissors' || 
     input === 'Paper' && play === 'Rock' ||
     input === 'Scissors' && play === 'Paper') {
-       return 'You win! ' + input + ' beats ' + play
+    return 'You win! ' + input + ' beats ' + play
 
 }   else if (input === 'Rock' && play === 'Paper' || 
     input === 'Paper' && play === 'Scissors' ||
