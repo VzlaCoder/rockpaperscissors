@@ -2,70 +2,45 @@ function computerPlay() {
     num = Math.floor(Math.random()*3);
     console.log(num)
     if (num < 1) {
-        play = 'Rock';
+        computerSelection = 'Rock';
        } else if (num < 2) {
-           play = 'Paper';
+           computerSelection = 'Paper';
        } else {
-           play = 'Scissors';
-       } return play
+           computerSelection = 'Scissors';
+       } return computerSelection
    }
 
-function RPS(input, play) {
-
-// input = input.toLowerCase()
-// let rest = input.slice(1)
-// let upper = input.charAt(0)
-// upper = upper.toUpperCase()
-// input = upper + rest    
-
-input = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
-
-if (input === 'Rock' && play === 'Scissors' || 
-    input === 'Paper' && play === 'Rock' ||
-    input === 'Scissors' && play === 'Paper') {
-    return 'You win! ' + input + ' beats ' + play
-
-}   else if (input === 'Rock' && play === 'Paper' || 
-    input === 'Paper' && play === 'Scissors' ||
-    input === 'Scissors' && play === 'Rock') {
-    return 'You lose! ' + play + ' beats ' + input
-
-}   else if (input === play) {
-    return 'Tie, try again.'
-
-}    else {
-        return 'Please re-enter an appropriate input. Maybe check your spelling?'
-}
-}
-
-function game() {
 let playerWins = 0
 let compWins = 0
-//    for (let i = 0;  i < 5; i++) {
-        play = computerPlay()
-        let input = prompt('Enter Rock, Paper, or Scissors: ')
-        let result = RPS(input, play)
-        console.log(result)
-            if (result.includes('win')) {
-            playerWins ++
-            console.log('Player wins: ' + playerWins)
-            }   else if (result.includes('lose')) {
-                compWins ++
-                console.log('Computer wins: ' + compWins) 
-        }
+let roundWinner = ''
+
+function playRound(playerSelection, computerSelection) {
+
+playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()
+
+if (playerSelection === 'Rock' && computerSelection === 'Scissors' || 
+    playerSelection === 'Paper' && computerSelection === 'Rock' ||
+    playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    playerWins ++
+    roundWinner = 'player' 
+        return "You win! You now have " + playerWins + " wins"
+
+}   else if (playerSelection === 'Rock' && computerSelection === 'Paper' || 
+    playerSelection === 'Paper' && computerSelection === 'Scissors' ||
+    playerSelection === 'Scissors' && computerSelection === 'Rock') {
+    compWins ++
+    roundWinner = 'computer'
+        return "You lose. The computer now has " + compWins + " wins"
+
+}   else if (playerSelection === computerSelection) {
+    roundWinner = 'tie'
+        return "Meh. Tie"
+
+}   else {
+        return 'Please re-enter an appropriate selection. Maybe check your spelling?'
+}
 }
 
-//let text = ''
-//    if (playerWins < compWins) {
-//        text = 'You lose'
-//        console.log(text)
-//        } else if (playerWins > compWins) {
-//        text = 'Hell yeah, brother! You win!'
-//        console.log(text)
-//        } else {
-//        text = 'You tied...'
-//        console.log(text)
-//    }
-//}
+function clickPlay(playerSelection)
 
-game()
+    playRound(playerSelection, computerPlay()) 

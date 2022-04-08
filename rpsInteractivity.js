@@ -12,18 +12,9 @@ btnContainer.appendChild(rock)
 btnContainer.appendChild(paper)
 btnContainer.appendChild(scissors)
 
-rock.addEventListener('click', function (e) {
-    result = RPS('rock', computerPlay())
-    console.log(result)
-});
-
-paper.addEventListener('click', function (e) {
-    result = RPS('paper', computerPlay())
-});
-
-scissors.addEventListener('click', function (e) {
-    result = RPS('scissors', computerPlay())
-});
+rock.addEventListener('click', () => clickPlay('rock'));
+paper.addEventListener('click', () => clickPlay('paper'));
+scissors.addEventListener('click', () => clickPlay('scissors'));
 
 const resultDiv = document.createElement('div')
 resultDiv.textContent = 'Test'
